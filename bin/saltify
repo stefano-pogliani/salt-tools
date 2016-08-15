@@ -1,0 +1,15 @@
+# Figuring out my own path correctly is nearly impossible so
+# use the Author's configuration and let user tell me where to look.
+export SALT_TOOLS_DIR=${SALT_TOOLS_DIR:-"$HOME/devel/config/salt/salt-tools"}
+
+
+# Setup the environment to use salt-tools.
+export SALT_TOOLS_BIN="${SALT_TOOLS_DIR}/bin"
+export SALT_TOOLS_GEMS="${SALT_TOOLS_DIR}/gems"
+export SALT_TOOLS_PACKAGES=${SALT_TOOLS_PACKAGES:-"${SALT_TOOLS_DIR}/../salt-packages"}
+
+export PATH="${PATH}:${SALT_TOOLS_BIN}:${SALT_TOOLS_GEMS}"
+
+
+# Create aliases.
+alias install-gems='bundle --path=./vendor --binstubs=${SALT_TOOLS_GEMS}'

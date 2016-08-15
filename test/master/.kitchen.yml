@@ -1,0 +1,13 @@
+---
+provisioner:
+  name: shell
+  script: kitchen-bootsrap.sh
+
+platforms:
+  - name: debian-8
+
+suites:
+  - name: docker
+    driver:
+      name: docker
+      use_sudo: true

@@ -1,0 +1,12 @@
+#!/bin/bash
+#  Builds and collects some packages from salt-packages.
+#  This will be used to bootstrap the salt-master kitchen.
+PACKAGES="sp-master-conf sp-spm-repo-conf"
+
+for package in ${PACKAGES}; do
+  echo "====> Collecting ${package} ..."
+  make -C "${SALT_TOOLS_PACKAGES}" clean PACKAGE=${package}
+  make -C "${SALT_TOOLS_PACKAGES}" build PACKAGE=${package}
+  cp ${SALT_TOOLS_PACKAGES}/out/${package}*.spm "data/packages/"
+  echo ""
+done

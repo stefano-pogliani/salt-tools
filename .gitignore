@@ -1,0 +1,14 @@
+# Kitchen related exclusions.
+.bundle/*
+gems/*
+vendor/*
+
+test/master/Dockerfile-kitchen*
+test/master/.kitchen/*
+test/master/data/packages/*
+
+Gemfile.lock
+
+
+# Editor related exclusions
+*.swp
