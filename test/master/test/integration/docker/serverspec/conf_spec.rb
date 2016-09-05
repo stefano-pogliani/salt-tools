@@ -9,7 +9,10 @@ describe file('/etc/salt/master.d/10-roots.conf') do
   its(:content_as_yaml) do
     should eq(
       'file_roots' => {'base' => ['/srv/spm/salt/']},
-      'pillar_roots' => {'base' => ['/srv/spm/pillar/']}
+      'pillar_roots' => {'base' => [
+        '/srv/spm/salt/sp/pillar/',
+        '/srv/spm/pillar/'
+      ]}
     )
   end
 end

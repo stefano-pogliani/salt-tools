@@ -39,7 +39,6 @@ sed -i 's/#master: salt/master: 127.0.0.1/' /etc/salt/minion
 
 # Copy example salt states and pillars from data.
 rsync --recursive "${DATA_DIR}/example/states/" "/srv/spm/salt/"
-rsync --recursive "${DATA_DIR}/example/pillar/" "/srv/spm/pillar/"
 
 # Copy the gpg test key for salt secrets.
 rsync --recursive "${DATA_DIR}/gpgkeys" "/etc/salt/"
